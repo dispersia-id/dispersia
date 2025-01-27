@@ -31,21 +31,21 @@ export default function FaqSection() {
                 prefer.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value='item-3'>
+            <AccordionItem value='item-4'>
               <AccordionTrigger>Is it animated?</AccordionTrigger>
               <AccordionContent>
                 Yes. It's animated by default, but you can disable it if you
                 prefer.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value='item-3'>
+            <AccordionItem value='item-5'>
               <AccordionTrigger>Is it animated?</AccordionTrigger>
               <AccordionContent>
                 Yes. It's animated by default, but you can disable it if you
                 prefer.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value='item-3'>
+            <AccordionItem value='item-6'>
               <AccordionTrigger>Is it animated?</AccordionTrigger>
               <AccordionContent>
                 Yes. It's animated by default, but you can disable it if you
