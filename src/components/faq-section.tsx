@@ -8,8 +8,8 @@ import {
 export default function FaqSection() {
   return (
     <section className='layout min-h-screen flex snap-end'>
-      <div className='grid grid-cols-2 w-full'>
-        <div className='flex'>
+      <div className='grid grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2 w-full'>
+        <div className='flex order-2 md:order-1'>
           <Accordion type='single' collapsible className='w-full m-auto'>
             <AccordionItem value='item-1'>
               <AccordionTrigger>Is it accessible?</AccordionTrigger>
@@ -31,10 +31,31 @@ export default function FaqSection() {
                 prefer.
               </AccordionContent>
             </AccordionItem>
+            <AccordionItem value='item-3'>
+              <AccordionTrigger>Is it animated?</AccordionTrigger>
+              <AccordionContent>
+                Yes. It's animated by default, but you can disable it if you
+                prefer.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value='item-3'>
+              <AccordionTrigger>Is it animated?</AccordionTrigger>
+              <AccordionContent>
+                Yes. It's animated by default, but you can disable it if you
+                prefer.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value='item-3'>
+              <AccordionTrigger>Is it animated?</AccordionTrigger>
+              <AccordionContent>
+                Yes. It's animated by default, but you can disable it if you
+                prefer.
+              </AccordionContent>
+            </AccordionItem>
           </Accordion>
         </div>
-        <div className='m-auto'>
-          <h1 className='text-8xl font-extrabold text-right font-plus-jakarta-sans pb-4'>
+        <div className='m-auto order-1 md:order-2'>
+          <h1 className='text-4xl md:text-8xl font-extrabold text-right font-plus-jakarta-sans pb-0 md:pb-4'>
             Frequently Asked Question
           </h1>
           <h3 className='text-3xl font-bold text-gray-700 text-right font-gabarito'>

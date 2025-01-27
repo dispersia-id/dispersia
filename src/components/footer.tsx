@@ -1,4 +1,5 @@
 import { ArrowBigRightDash } from 'lucide-react';
+import Image from 'next/image';
 import { Button } from './ui/button';
 
 export default function Footer() {
@@ -18,9 +19,12 @@ export default function Footer() {
           </Button>
 
           <div className='mt-4 py-5 opacity-30'>
-            <h1 className='text-8xl font-extrabold text-left font-plus-jakarta-sans'>
-              dispersia
-            </h1>
+            <Image
+              alt='dispersia'
+              src={'/dispersia-footer.svg'}
+              width={400}
+              height={400}
+            />
           </div>
         </div>
 

@@ -25,14 +25,14 @@ export default function PassEventSection() {
           </h3>
         </motion.div>
         <div>
-          <div className='grid grid-cols-6 justify-center align-baseline w-full gap-5'>
+          <div className='grid grid-cols-1 md:grid-cols-6 w-full gap-5'>
             <EventCard />
             <EventCard />
             <EventCard />
           </div>
         </div>
         <div className=''>
-          <div className='grid grid-cols-6 justify-center w-full gap-5'>
+          <div className='grid grid-cols-1 md:grid-cols-6 justify-center w-full gap-5'>
             <EventCard variant='default' />
             <EventCard variant='default' />
             <EventCard variant='default' />
