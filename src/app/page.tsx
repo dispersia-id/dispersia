@@ -5,6 +5,7 @@ import HeroSection from '@/components/hero-section';
 import OrderSection from '@/components/order-section';
 import PassEventSection from '@/components/pass-event-section';
 import ReviewSection from '@/components/review-section';
+import ShowCaseSections from '@/components/show-case-sections';
 import Example from '@/components/test';
 import ValueSection from '@/components/value-section';
 
@@ -17,6 +18,7 @@ export default function Home() {
         <HeroSection />
         <PassEventSection />
         <ValueSection />
+        <ShowCaseSections />
         <Example />
         {/* <ShowCaseSection /> */}
         <ReviewSection />

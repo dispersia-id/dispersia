@@ -26,16 +26,16 @@ export default function PassEventSection() {
         </motion.div>
         <div>
           <div className='grid grid-cols-1 md:grid-cols-6 w-full gap-5'>
-            <EventCard />
-            <EventCard />
-            <EventCard />
+            <EventCard src='/images/events/iniits.svg' />
+            <EventCard src='/images/events/sch.svg' />
+            <EventCard src='/images/events/parking.svg' />
           </div>
         </div>
         <div className=''>
           <div className='grid grid-cols-1 md:grid-cols-6 justify-center w-full gap-5'>
-            <EventCard variant='default' />
-            <EventCard variant='default' />
-            <EventCard variant='default' />
+            <EventCard src='/images/events/cyberdas.svg' variant='default' />
+            <EventCard src='/images/events/astec.svg' variant='default' />
+            <EventCard src='/images/events/icts.svg' variant='default' />
           </div>
         </div>
       </div>

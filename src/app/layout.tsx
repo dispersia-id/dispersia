@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Gabarito, Plus_Jakarta_Sans } from 'next/font/google';
+import { Gabarito, Manrope, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -10,6 +10,12 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 const gabarito = Gabarito({
   variable: '--font-gabarito',
+  subsets: ['latin'],
+  preload: true,
+});
+
+const manrope = Manrope({
+  variable: '--font-manrope',
   subsets: ['latin'],
   preload: true,
 });
@@ -27,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang='en' className='!scroll-smooth'>
       <body
-        className={` ${plusJakartaSans.variable} ${gabarito.variable} antialiased`}
+        className={` ${plusJakartaSans.variable} ${gabarito.variable} ${manrope.variable} antialiased`}
       >
         {children}
       </body>

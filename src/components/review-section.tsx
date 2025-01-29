@@ -5,7 +5,7 @@ import { BentoGrid, BentoGridItem } from './ui/bento-grid';
 export default function ReviewSection() {
   return (
     <section className='layout min-h-screen flex'>
-      <BentoGrid className='max-w-4xl mx-auto'>
+      <BentoGrid className='w-full mx-auto'>
         {items.map((item, i) => (
           <BentoGridItem
             key={i}
@@ -13,7 +13,7 @@ export default function ReviewSection() {
             description={item.description}
             header={item.header}
             icon={item.icon}
-            className={i === 3 || i === 6 ? 'md:col-span-2' : ''}
+            className={i % 4 === 0 ? 'md:col-span-2 row-span-2' : 'col-span-2'}
           />
         ))}
       </BentoGrid>

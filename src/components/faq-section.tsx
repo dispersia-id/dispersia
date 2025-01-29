@@ -12,44 +12,51 @@ export default function FaqSection() {
         <div className='flex order-2 md:order-1'>
           <Accordion type='single' collapsible className='w-full m-auto'>
             <AccordionItem value='item-1'>
-              <AccordionTrigger>Is it accessible?</AccordionTrigger>
+              <AccordionTrigger>
+                Kenapa bisa lebih cepat dari yang lain?
+              </AccordionTrigger>
               <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern.
+                Kami membuat sistem atau website dengan pre-build sistem,
+                sehingga crafting dan developing website keseluruhan menjadi
+                lebih cepat dan sistematis.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value='item-2'>
-              <AccordionTrigger>Is it styled?</AccordionTrigger>
+              <AccordionTrigger>
+                Berapa kisaran harga pembuatan website konser EO?
+              </AccordionTrigger>
               <AccordionContent>
-                Yes. It comes with default styles that matches the other
-                components&apos; aesthetic.
+                Harga dapat bervariasi dengan harga dasar yang sudah kami
+                tentukan. Info lebih lanjut hubungi kami!
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value='item-3'>
-              <AccordionTrigger>Is it animated?</AccordionTrigger>
+              <AccordionTrigger>
+                Apakah terbuka kerja sama jangka panjang dengan EO?
+              </AccordionTrigger>
               <AccordionContent>
-                Yes. It's animated by default, but you can disable it if you
-                prefer.
+                Ya! Dispersia sangat terbuka untuk tawaran kerja sama dengan EO
+                atau pihak lain yang berkaitan dengan event dan konser, sesuai
+                dengan visi Dispersia!
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value='item-4'>
-              <AccordionTrigger>Is it animated?</AccordionTrigger>
+              <AccordionTrigger>
+                Bagaimana performa website yang dibuat Dispersia?
+              </AccordionTrigger>
               <AccordionContent>
-                Yes. It's animated by default, but you can disable it if you
-                prefer.
+                Dengan tech-stack yang kami gunakan, website dan sistem yang
+                dibuat sangat memanjakan pengunjung dan anti lemot!
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value='item-5'>
-              <AccordionTrigger>Is it animated?</AccordionTrigger>
+              <AccordionTrigger>
+                Adakah harga khusus event mahasiswa?
+              </AccordionTrigger>
               <AccordionContent>
-                Yes. It's animated by default, but you can disable it if you
-                prefer.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value='item-6'>
-              <AccordionTrigger>Is it animated?</AccordionTrigger>
-              <AccordionContent>
-                Yes. It's animated by default, but you can disable it if you
-                prefer.
+                Tentu ada! Terdapat harga spesial untuk mahasiswa (organisasi
+                atau kepanitiaan) yang menyelenggarakan event atau konser!
+                Silahkan hubungi Dispersia ya!
               </AccordionContent>
             </AccordionItem>
           </Accordion>

@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 interface EventCardProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
-  src?: string;
+  src: string;
   variant?: 'default' | 'primary';
 }
 
@@ -22,12 +22,7 @@ export default function EventCard({
       )}
       {...props}
     >
-      <Image
-        src='/images/events/sch.svg'
-        alt='Event'
-        width={200}
-        height={200}
-      />
+      <Image src={src} alt='Event' width={200} height={200} />
     </div>
   );
 }

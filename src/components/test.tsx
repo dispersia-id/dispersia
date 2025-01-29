@@ -25,21 +25,21 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ['10%', '-90%']);
+  const x = useTransform(scrollYProgress, [0, 1], ['0%', '-90%']);
 
   return (
     <section
       ref={targetRef}
-      className='relative h-[300vh] bg-background m-auto flex flex-col md:flex-row '
+      className='relative h-[900vh] bg-background m-auto flex flex-col md:flex-row '
     >
       <div className='sticky w-full md:w-1/2 flex flex-col top-10 h-screen items-center overflow-hidden'>
         <div className='m-auto overflow-hidden'>
           <div className='left-0 top-0 flex flex-col justify-center'>
-            <div className='sticky left-0 w-1/4'>
-              <h1 className='text-8xl font-black text-white font-plus-jakarta-sans'>
+            <div className='sticky left-0 w-1/2'>
+              <h1 className='text-8xl font-black text-white font-plus-jakarta-sans mb-8'>
                 dispersia
               </h1>
-              <p className='text-4xl'>
+              <p className='text-2xl mb-8'>
                 the all that you need to know; the showcases
               </p>
             </div>
@@ -53,7 +53,7 @@ const HorizontalScrollCarousel = () => {
       </div>
 
       <div className='sticky w-full md:w-1/2 right-0 space-y-8 flex flex-col top-10 h-screen items-center overflow-hidden'>
-        <div className='border m-auto  flex flex-col items-center justify-center'>
+        <div className='m-auto  flex flex-col items-center justify-center'>
           <AnimatePresence initial={false}>
             {content[active].content ?? null}
           </AnimatePresence>
@@ -69,7 +69,9 @@ interface CardProps extends React.ComponentPropsWithRef<'div'> {
 }
 const Card = ({ card, setActive }: CardProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInview = useInView(ref, { amount: 'all' });
+  const isInview = useInView(ref, {
+    margin: '0px 50% -100px 50%',
+  });
   React.useEffect(() => {
     if (isInview) {
       setActive(card.id);
@@ -80,21 +82,20 @@ const Card = ({ card, setActive }: CardProps) => {
     <motion.div
       ref={ref}
       key={card.id}
-      className='group relative h-[200px] w-[400px] overflow-hidden bg-neutral-200'
+      className='group relative h-[100px] w-[200px] overflow-hidden bg-neutral-200'
+      onClick={() => setActive(card.id)}
     >
       <div
         style={{
           backgroundImage: `url(${card.url})`,
-          backgroundSize: 'cover',
           backgroundPosition: 'center',
+          objectFit: 'cover',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
         }}
         className='absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110'
       ></div>
-      <div className='absolute inset-0 z-10 grid place-content-center'>
-        <p className='bg-gradient-to-br from-white/20 to-white/0 p-8 text-6xl font-black uppercase text-white backdrop-blur-lg'>
-          {card.title}
-        </p>
-      </div>
+      <div className='absolute inset-0 z-10 grid place-content-center'></div>
     </motion.div>
   );
 };
@@ -102,29 +103,27 @@ const Card = ({ card, setActive }: CardProps) => {
 export default Example;
 
 type CardType = {
-  description: string;
   url: string;
   title: string;
   id: number;
   content: JSX.Element;
 };
 
-const content: CardType[] = [
+export const content: CardType[] = [
   {
     id: 0,
-    url: '/images/showcase/show1.png',
+    url: '/images/showcase/left/astec.svg',
     title: 'Collaborative Editing',
-    description:
-      'Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.',
     content: (
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
+        transition={{ duration: 5, ease: 'easeIn' }}
         className='h-full w-full flex items-center justify-center text-white'
       >
         <Image
-          src='/images/showcase/show1.png'
+          src='/images/showcase/right/astec.png'
           width={300}
           height={300}
           className='h-full w-full object-cover'
@@ -136,9 +135,7 @@ const content: CardType[] = [
   {
     id: 1,
     title: 'Real time changes',
-    url: '/images/showcase/show1.png',
-    description:
-      'See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.',
+    url: '/images/showcase/left/ilit.svg',
     content: (
       <motion.div
         initial={{ opacity: 0 }}
@@ -147,7 +144,7 @@ const content: CardType[] = [
         className='h-full w-full flex items-center justify-center text-white'
       >
         <Image
-          src='/images/showcase/preview1.png'
+          src='/images/showcase/right/ilit.png'
           width={300}
           height={300}
           className='h-full w-full object-cover'
@@ -159,9 +156,7 @@ const content: CardType[] = [
   {
     id: 2,
     title: 'Version control',
-    url: '/images/showcase/show1.png',
-    description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+    url: '/images/showcase/left/cyberdas.svg',
     content: (
       <motion.div
         initial={{ opacity: 0 }}
@@ -170,7 +165,7 @@ const content: CardType[] = [
         className='h-full w-full flex items-center justify-center text-white'
       >
         <Image
-          src='/images/showcase/preview1.png'
+          src='/images/showcase/right/cyberdas.png'
           width={300}
           height={300}
           className='h-full w-full object-cover'
@@ -182,9 +177,7 @@ const content: CardType[] = [
   {
     id: 3,
     title: 'Running out of content',
-    url: '/images/showcase/show1.png',
-    description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+    url: '/images/showcase/left/sch-nst.svg',
     content: (
       <motion.div
         initial={{ opacity: 0 }}
@@ -194,7 +187,139 @@ const content: CardType[] = [
         className='h-full w-full flex items-center justify-center text-white'
       >
         <Image
-          src='/images/showcase/preview1.png'
+          src='/images/showcase/right/sch-nst.png'
+          width={300}
+          height={300}
+          className='h-full w-full object-cover'
+          alt='linear board demo'
+        />
+      </motion.div>
+    ),
+  },
+  {
+    id: 4,
+    title: 'Running out of content',
+    url: '/images/showcase/left/icts.svg',
+    content: (
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+        className='h-full w-full flex items-center justify-center text-white'
+      >
+        <Image
+          src='/images/showcase/right/icts.png'
+          width={300}
+          height={300}
+          className='h-full w-full object-cover'
+          alt='linear board demo'
+        />
+      </motion.div>
+    ),
+  },
+  {
+    id: 5,
+    title: 'Running out of content',
+    url: '/images/showcase/left/ilit25.svg',
+    content: (
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+        className='h-full w-full flex items-center justify-center text-white'
+      >
+        <Image
+          src='/images/showcase/right/ilit25.png'
+          width={300}
+          height={300}
+          className='h-full w-full object-cover'
+          alt='linear board demo'
+        />
+      </motion.div>
+    ),
+  },
+  {
+    id: 6,
+    title: 'Running out of content',
+    url: '/images/showcase/left/parking.svg',
+    content: (
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+        className='h-full w-full flex items-center justify-center text-white'
+      >
+        <Image
+          src='/images/showcase/right/parking.png'
+          width={300}
+          height={300}
+          className='h-full w-full object-cover'
+          alt='linear board demo'
+        />
+      </motion.div>
+    ),
+  },
+  {
+    id: 7,
+    title: 'Running out of content',
+    url: '/images/showcase/left/sch-22-2.svg',
+    content: (
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+        className='h-full w-full flex items-center justify-center text-white'
+      >
+        <Image
+          src='/images/showcase/right/sch-22-2.png'
+          width={300}
+          height={300}
+          className='h-full w-full object-cover'
+          alt='linear board demo'
+        />
+      </motion.div>
+    ),
+  },
+  {
+    id: 8,
+    title: 'Running out of content',
+    url: '/images/showcase/left/sch-22.svg',
+    content: (
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+        className='h-full w-full flex items-center justify-center text-white'
+      >
+        <Image
+          src='/images/showcase/right/sch-22.png'
+          width={300}
+          height={300}
+          className='h-full w-full object-cover'
+          alt='linear board demo'
+        />
+      </motion.div>
+    ),
+  },
+  {
+    id: 9,
+    title: 'Running out of content',
+    url: '/images/showcase/left/sch-reeva.svg',
+    content: (
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+        className='h-full w-full flex items-center justify-center text-white'
+      >
+        <Image
+          src='/images/showcase/right/sch-reeva.png'
           width={300}
           height={300}
           className='h-full w-full object-cover'

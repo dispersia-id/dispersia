@@ -21,7 +21,7 @@ export default function HeroSection() {
     show: { opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } },
   };
   return (
-    <section className='bg-gray-900'>
+    <section className='hero-background'>
       <div className='layout min-h-screen flex snap-center'>
         <div className='flex justify-center flex-row h-full w-[80%] m-auto'>
           <div className='grid grid-flow-col grid-cols-2'>
@@ -63,7 +63,7 @@ export default function HeroSection() {
               </motion.h3>
               <motion.div variants={item}>
                 <Button>i want it! 😲</Button>
-                <Button className='bg-yellow-300 text-black font-bold'>
+                <Button className='bg-yellow-300 text-secondary-foreground font-bold'>
                   Quick Start Here
                 </Button>
               </motion.div>

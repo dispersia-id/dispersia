@@ -44,7 +44,7 @@ export default function OrderSection() {
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className='space-y-6 w-[50%] mx-auto'
+              className='space-y-6 w-full md:w-[50%] mx-auto'
             >
               <FormField
                 control={form.control}
