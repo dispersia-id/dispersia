@@ -12,6 +12,7 @@ export default {
       fontFamily: {
         'plus-jakarta-sans': 'var(--font-plus-jakarta-sans)',
         gabarito: 'var(--font-gabarito)',
+        manrope: 'var(--font-manrope)',
       },
       colors: {
         background: 'hsl(var(--background))',
