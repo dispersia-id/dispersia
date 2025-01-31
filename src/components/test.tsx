@@ -25,7 +25,7 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ['0%', '-90%']);
+  const x = useTransform(scrollYProgress, [0, 1], ['10%', '-90%']);
 
   return (
     <section
@@ -44,7 +44,10 @@ const HorizontalScrollCarousel = () => {
               </p>
             </div>
           </div>
-          <motion.div style={{ x }} className='flex gap-4'>
+          <motion.div
+            style={{ x }}
+            className='flex gap-4 snap-both snap-mandatory overflow-auto'
+          >
             {content.map((card) => {
               return <Card setActive={setActive} card={card} key={card.id} />;
             })}
@@ -71,6 +74,7 @@ const Card = ({ card, setActive }: CardProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const isInview = useInView(ref, {
     margin: '0px 50% -100px 50%',
+    amount: 0.8,
   });
   React.useEffect(() => {
     if (isInview) {
@@ -82,7 +86,7 @@ const Card = ({ card, setActive }: CardProps) => {
     <motion.div
       ref={ref}
       key={card.id}
-      className='group relative h-[100px] w-[200px] overflow-hidden bg-neutral-200'
+      className='group relative h-[100px] w-[200px] overflow-hidden bg-neutral-200 snap-center'
       onClick={() => setActive(card.id)}
     >
       <div
@@ -116,10 +120,11 @@ export const content: CardType[] = [
     title: 'Collaborative Editing',
     content: (
       <motion.div
+        whileInView={{ scale: 1.1 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 5, ease: 'easeIn' }}
+        transition={{ duration: 1, ease: 'easeIn' }}
         className='h-full w-full flex items-center justify-center text-white'
       >
         <Image

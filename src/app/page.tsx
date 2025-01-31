@@ -1,13 +1,9 @@
-import FaqSection from '@/components/faq-section';
 import Footer from '@/components/footer';
 import Header from '@/components/header';
-import HeroSection from '@/components/hero-section';
-import OrderSection from '@/components/order-section';
-import PassEventSection from '@/components/pass-event-section';
-import ReviewSection from '@/components/review-section';
-import ShowCaseSections from '@/components/show-case-sections';
-import Example from '@/components/test';
-import ValueSection from '@/components/value-section';
+import Scrollbar from '@/components/scroll-bar';
+import Sections from '@/components/section';
+import { SectionProvider } from '@/context/section-context';
+import { sections } from '@/data/section-data';
 
 export default function Home() {
   return (
@@ -15,15 +11,19 @@ export default function Home() {
       <Header />
       {/* //className='snap-mandatory snap-both h-screen overflow-y-auto' */}
       <main className='w-full'>
-        <HeroSection />
-        <PassEventSection />
-        <ValueSection />
-        <ShowCaseSections />
-        <Example />
-        {/* <ShowCaseSection /> */}
-        <ReviewSection />
-        <FaqSection />
-        <OrderSection />
+        <SectionProvider>
+          <Scrollbar sections={sections} />
+          {sections.map((item, index) => {
+            return (
+              <Sections
+                isFirst={item.isFirst}
+                key={index}
+                section={sections[index]}
+                isLast={item.isLast}
+              />
+            );
+          })}
+        </SectionProvider>
         <Footer />
       </main>
     </>

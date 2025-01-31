@@ -13,7 +13,7 @@ export default function ShowCaseSections() {
           <p className='text-2xl mb-8'>
             the all that you need to know; the showcases
           </p>
-          <div className='flex overflow-x-auto w-full border space-x-2 items-center'>
+          <div className='flex overflow-x-auto w-full border space-x-2 items-center snap-x snap-mandatory overflow-y-hidden'>
             {content.map((card) => {
               return (
                 <Image
@@ -21,7 +21,7 @@ export default function ShowCaseSections() {
                   src={card.url}
                   width={300}
                   height={300}
-                  className='h-full w-full object-cover hover:scale-105 transition-transform duration-300'
+                  className='h-full w-full snap-center object-cover hover:scale-105 transition-transform duration-300'
                   alt={card.title}
                 />
               );
