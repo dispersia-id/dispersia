@@ -1,3 +1,5 @@
+'use client';
+import { motion } from 'framer-motion';
 import {
   Accordion,
   AccordionContent,
@@ -7,9 +9,23 @@ import {
 
 export default function FaqSection() {
   return (
-    <section className='layout min-h-screen flex snap-end'>
-      <div className='grid grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2 w-full'>
-        <div className='flex order-2 md:order-1'>
+    <section className='layout min-h-screen flex snap-end relative overflow-x-hidden'>
+      <div className='grid grid-rows-6 grid-cols-1 md:grid-rows-1 md:grid-cols-2 w-full'>
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+            transition: {
+              duration: 1,
+              ease: 'easeIn',
+              type: 'spring',
+              bounce: 0.25,
+            },
+          }}
+          viewport={{ once: true }}
+          className='flex order-2 md:order-1 row-span-4 md:row-span-1 m-auto'
+        >
           <Accordion type='single' collapsible className='w-full m-auto'>
             <AccordionItem value='item-1'>
               <AccordionTrigger>
@@ -60,15 +76,29 @@ export default function FaqSection() {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
-        </div>
-        <div className='m-auto order-1 md:order-2'>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+            transition: {
+              duration: 1,
+              ease: 'easeIn',
+              type: 'spring',
+              bounce: 0.25,
+            },
+          }}
+          viewport={{ once: true }}
+          className='md:m-auto order-1 h-fit md:order-2'
+        >
           <h1 className='text-4xl md:text-8xl font-extrabold text-right font-plus-jakarta-sans pb-0 md:pb-4'>
             Frequently Asked Question
           </h1>
           <h3 className='text-3xl font-bold text-gray-700 text-right font-gabarito'>
             anything you wanna know?
           </h3>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -9,7 +9,7 @@ import {
 import Image from 'next/image';
 import React, { JSX, useRef } from 'react';
 
-const Example = () => {
+const ShowCase = () => {
   return (
     <div className='w-full layout'>
       <HorizontalScrollCarousel />
@@ -30,13 +30,13 @@ const HorizontalScrollCarousel = () => {
   return (
     <section
       ref={targetRef}
-      className='relative h-[900vh] bg-background m-auto flex flex-col md:flex-row '
+      className='relative h-[900vh] bg-background m-auto flex-col md:flex-row hidden md:flex'
     >
       <div className='sticky w-full md:w-1/2 flex flex-col top-10 h-screen items-center overflow-hidden'>
         <div className='m-auto overflow-hidden'>
           <div className='left-0 top-0 flex flex-col justify-center'>
             <div className='sticky left-0 w-1/2'>
-              <h1 className='text-8xl font-black text-white font-plus-jakarta-sans mb-8'>
+              <h1 className='md:text-8xl text-4xl font-black text-white font-plus-jakarta-sans mb-8'>
                 dispersia
               </h1>
               <p className='text-2xl mb-8'>
@@ -104,7 +104,7 @@ const Card = ({ card, setActive }: CardProps) => {
   );
 };
 
-export default Example;
+export default ShowCase;
 
 type CardType = {
   url: string;

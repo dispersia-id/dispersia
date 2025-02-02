@@ -3,7 +3,8 @@ import HeroSection from '@/components/hero-section';
 import OrderSection from '@/components/order-section';
 import PassEventSection from '@/components/pass-event-section';
 import ReviewSection from '@/components/review-section';
-import Example from '@/components/test';
+import ShowCase from '@/components/show-case';
+import ShowCaseMobile from '@/components/show-case-mobile';
 import ValueSection from '@/components/value-section';
 import { Section } from '@/types/section-type';
 
@@ -23,18 +24,22 @@ export const sections: Section[] = [
   },
   {
     positionId: 3,
-    component: <Example />,
+    component: <ShowCaseMobile />,
   },
   {
     positionId: 4,
-    component: <ReviewSection />,
+    component: <ShowCase />,
   },
   {
     positionId: 5,
-    component: <FaqSection />,
+    component: <ReviewSection />,
   },
   {
     positionId: 6,
+    component: <FaqSection />,
+  },
+  {
+    positionId: 7,
     component: <OrderSection />,
     isLast: true,
   },

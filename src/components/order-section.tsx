@@ -30,8 +30,10 @@ export default function OrderSection() {
     <section className='layout min-h-screen flex snap-center font-gabarito font-semibold '>
       <div className='flex flex-col  w-full space-y-11'>
         <div className='mx-auto '>
-          <h1 className='text-4xl text-center'>focus on your event,</h1>
-          <h1 className='text-4xl text-center'>
+          <h1 className='md:text-4xl text-2xl text-center'>
+            focus on your event,
+          </h1>
+          <h1 className='md:text-4xl text-2xl text-center'>
             let us take care of the website!
           </h1>
           <div className='flex justify-center space-x-4 pt-4'>

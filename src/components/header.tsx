@@ -26,7 +26,7 @@ export default function Header() {
       initial='hidden'
       animate={hidden ? 'hidden' : 'visible'}
       transition={{ duration: 0.7, ease: 'easeInOut' }}
-      className='layout fixed m-auto inset-x-0 w-full pt-2 font-gabarito'
+      className='layout fixed m-auto inset-x-0 pt-2 font-gabarito'
     >
       <div className='flex justify-between items-center'>
         <div>
