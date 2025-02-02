@@ -34,7 +34,7 @@ export default function HeroSection() {
                 type: 'spring',
                 bounce: 0.25,
               }}
-              className='flex justify-center md:justify-start mr-8 '
+              className='flex justify-center md:justify-start md:mr-8 mr-0 '
             >
               <Image
                 src='/svg-hero.svg'
